@@ -3,6 +3,7 @@ import axios from "axios";
 import "./list.css";
 
 function List() {
+  // List
   const [quotes, setQuote] = useState(null);
 
   useEffect(() => {
