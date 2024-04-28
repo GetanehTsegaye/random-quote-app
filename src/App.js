@@ -1,11 +1,7 @@
-import "./App.css";
+import SideNav from "./components/sidenav/Sidenav";
 
 function App() {
-  return (
-    <div className="App">
-      <p>Random Quote App</p>
-    </div>
-  );
+  return <SideNav />;
 }
 
 export default App;
