@@ -8,8 +8,6 @@ function Card() {
     axios
       .get("https://api.quotable.io/quotes/random?limit=6")
       .then((respose) => {
-        // return respose.data;
-        console.log(respose.data);
         setQuote(respose.data);
       });
   }, []);
