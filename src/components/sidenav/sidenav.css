@@ -1,3 +1,43 @@
 #sideNav {
   background-color: black;
 }
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  div#sideNav {
+    padding-left: 1rem;
+  }
+  .rotate-180 {
+    --tw-rotate: 180deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  .w-72 {
+    width: 13rem;
+  }
+  h1#appTitle {
+    font-size: medium;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  div#sideNav {
+    padding-left: 0rem;
+    column-gap: 0rem;
+    padding-right: 0rem;
+  }
+  .rotate-180 {
+    --tw-rotate: 180deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  .w-72 {
+    width: 13rem;
+  }
+  .w-20 {
+    width: 3rem;
+  }
+  h1#appTitle {
+    font-size: medium;
+  }
+}

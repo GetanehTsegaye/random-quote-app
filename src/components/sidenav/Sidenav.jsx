@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-import Menus from "../../api/menu";
+import Menus from "../../constants/menu";
 import "./sidenav.css";
 
 const Sidenav = () => {
@@ -31,6 +31,7 @@ const Sidenav = () => {
           className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"}`}
         />
         <h1
+          id="appTitle"
           className={`text-white origin-left font-medium text-xl duration-300 ${
             !open && "scale-0"
           }`}

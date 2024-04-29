@@ -1,15 +1,20 @@
 import { React, useState, useEffect } from "react";
-import axios from "axios";
+import { fetchQuotes } from "../../api/fetchQuotes";
 import "./card.css";
 
 function Card() {
   const [quotes, setQuote] = useState(null);
   useEffect(() => {
-    axios
-      .get("https://api.quotable.io/quotes/random?limit=6")
-      .then((respose) => {
-        setQuote(respose.data);
-      });
+    const fetchData = async () => {
+      try {
+        const fetchedQuotes = await fetchQuotes();
+        setQuote(fetchedQuotes);
+      } catch (error) {
+        console.error("Error fetching quotes:", error);
+      }
+    };
+
+    fetchData();
   }, []);
   return (
     <>

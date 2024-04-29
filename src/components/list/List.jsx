@@ -1,18 +1,21 @@
 import { React, useState, useEffect } from "react";
-import axios from "axios";
 import "./list.css";
-
+import { fetchQuotes } from "../../api/fetchQuotes";
 function List() {
-  const [quotes, setQuote] = useState(null);
+  const [quotes, setQuote] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://api.quotable.io/quotes/random?limit=5")
-      .then((respose) => {
-        setQuote(respose.data);
-      });
-  }, []);
+    const fetchData = async () => {
+      try {
+        const fetchedQuotes = await fetchQuotes();
+        setQuote(fetchedQuotes);
+      } catch (error) {
+        console.error("Error fetching quotes:", error);
+      }
+    };
 
+    fetchData();
+  }, []);
   return (
     <>
       <div>
@@ -29,7 +32,6 @@ function List() {
         <table className="table-auto w-full">
           <thead>
             <tr className="bg-light-blue text-white">
-              {/* Light blue header */}
               <th>Author</th>
               <th>Quote</th>
               <th>Quoted Year</th>

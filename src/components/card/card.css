@@ -27,6 +27,7 @@
   display: inline-block;
   overflow: hidden;
   height: 360px;
+  overflow-y: auto;
 }
 
 .cards .card-image {
